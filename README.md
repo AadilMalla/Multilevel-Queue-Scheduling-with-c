@@ -56,25 +56,44 @@ q3->process_counter=0;
 printf("The processes after sorting them to three queues are as\n");
 printf("QueueNo\tProcess_id\tProcess_Priority\tProcess_arrival_time\tBurst_time\n");
 
+
 	if(q1->process_counter>0)
 	{
 	for(i=0;i<q1->process_counter;i++)
 	{
-		printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",1,process[i].process_id,process[i].priority,process[i].arrival_time,process[i].burst_time);
+		for(j=0;j<=n;j++)
+		{
+			if(process[j].process_id==q1->process_queue[i])
+			{
+				printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",1,q1->process_queue[i],process[j].priority,process[j].arrival_time,process[j].burst_time);
+			}
+	    }
     }
     }
     if(q2->process_counter>0)
 	{
 	for(i=0;i<q2->process_counter;i++)
 	{
-		printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",2,process[i].process_id,process[i].priority,process[i].arrival_time,process[i].burst_time);
+		for(j=0;j<=n;j++)
+		{
+			if(process[j].process_id==q2->process_queue[i])
+			{
+				printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",2,q2->process_queue[i],process[j].priority,process[j].arrival_time,process[j].burst_time);
+			}
+		}
     }
     }
     if(q3->process_counter>0)
 	{
 	for(i=0;i<q3->process_counter;i++)
 	{
-		printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",3,process[i].process_id,process[i].priority,process[i].arrival_time,process[i].burst_time);
-    }
-    }
+		for(j=0;j<=n;j++)
+		{
+			if(process[j].process_id==q3->process_queue[i])
+			{
+				printf("%d\t\t%d\t\t%d\t\t%d\t\t\t%d\n",3,q3->process_queue[i],process[j].priority,process[j].arrival_time,process[j].burst_time);
+			}
+		}
+}
+}
 }
